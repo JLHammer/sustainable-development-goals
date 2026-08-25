@@ -1,23 +1,8 @@
-import { RequiredMark, StyledLabel } from './Label.styled';
+import { StyledLabel } from './Label.styled';
 import type { LabelProps } from './Label.types';
 
-const Label = ({
-  required = false,
-  disabled = false,
-  srOnly = false,
-  children,
-  ...rest
-}: LabelProps) => {
-  return (
-    <StyledLabel $disabled={disabled} $srOnly={srOnly} {...rest}>
-      {children}
-      {required && (
-        <RequiredMark aria-hidden="true" title="Required">
-          *
-        </RequiredMark>
-      )}
-    </StyledLabel>
-  );
+const Label = (props: LabelProps) => {
+  return <StyledLabel {...props} />;
 };
 
 export default Label;
